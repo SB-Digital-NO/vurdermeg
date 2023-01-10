@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <li>User: {{ user.get_username }}</li>
+{% else %}
+    Log in to view
+{% endif %}
+{% block content %}
+{% endblock %}
+{% endblock %}
