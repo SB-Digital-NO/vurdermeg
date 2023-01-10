@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <nav>
+        <a href="{% url 'teacherindex' %}">Home</a>
+        <a href="#">Profil</a>
+        <a href="#">Grupper</a>
+        <a href="#">Ny vurdering</a>
+        <a href="#">Vurderinger</a>
+    </nav>
+    {% if user.is_authenticated %}
+        <li>User: {{ user.get_username }}</li>
+    {% else %}
+        Log in to view
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
