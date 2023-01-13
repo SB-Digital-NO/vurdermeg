@@ -29,6 +29,7 @@ class UserAdmin(BaseUserAdmin):
                     "name",
                     "email",
                     "password",
+                    "pk",
                 )
             },
         ),
@@ -45,7 +46,8 @@ class UserAdmin(BaseUserAdmin):
         ),
         (_("Important dates"), {"fields": ("last_login",)}),
     )
-    readonly_fields = ["last_login"]
+    readonly_fields = ["last_login", "pk"]
+    # add_fieldsets: fields shown in the add new user page
     add_fieldsets = (
         (
             None,

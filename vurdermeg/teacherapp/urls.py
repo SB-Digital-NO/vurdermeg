@@ -1,5 +1,5 @@
 from django.urls import path
 
-from . import views
+from .views import TeacherHome
 
-urlpatterns = [path("", views.t_home, name="t_home")]
+urlpatterns = [path("", TeacherHome.as_view(), name="t_home")]

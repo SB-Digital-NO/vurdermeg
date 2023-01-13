@@ -6,4 +6,8 @@
 {% else %}
 Log in to view
 {% endif %}
+Is there anything here?
+{% for obj in object_list %}
+<li>{{obj.name}}</li>
+{% endfor %}
 {% endblock %}
