@@ -2,8 +2,11 @@
 Database models.
 """
 
-from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
-                                        PermissionsMixin)
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
+)
 from django.db import models
 
 
@@ -57,14 +60,14 @@ class Assessment(models.Model):
 
 
 class Question(models.Model):
-    question_text = models.TextField()
+    data = models.JSONField()
     assessments = models.ManyToManyField(Assessment)
 
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    answer_text = models.TextField()
+    data = models.JSONField()
 
 
 class Tag(models.Model):
