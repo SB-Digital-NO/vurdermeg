@@ -15,3 +15,9 @@ class QuestionForm(ModelForm):
 
 
 QuestionFormSet = formset_factory(QuestionForm)
+
+
+class AssessmentGroupForm(ModelForm):
+    class Meta:
+        model = AssessmentGroup
+        fields = "__all__"

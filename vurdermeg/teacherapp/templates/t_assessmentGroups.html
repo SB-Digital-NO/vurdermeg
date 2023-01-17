@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for group in assessment_groups %}
+<li>{{ group.group_name }} antall medlemmer: {{group.members.count}}</li>
+
+{% endfor %}
+{% endblock %}
