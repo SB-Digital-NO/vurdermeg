@@ -51,12 +51,18 @@ class AssessmentGroup(models.Model):
     group_name = models.CharField(max_length=255)
     members = models.ManyToManyField(User)
 
+    def __str__(self) -> str:
+        return self.group_name
+
 
 class Assessment(models.Model):
     name = models.CharField(max_length=150)
     group_id = models.ForeignKey(AssessmentGroup, on_delete=models.CASCADE)
     assignment_time = models.DateTimeField()
     expiry_time = models.DateTimeField()
+
+    def __str__(self) -> str:
+        return self.name
 
 
 class Question(models.Model):
@@ -73,3 +79,6 @@ class Answer(models.Model):
 class Tag(models.Model):
     tag_name = models.CharField(max_length=120)
     assessments = models.ManyToManyField(Assessment)
+
+    def __str__(self) -> str:
+        return self.tag_name

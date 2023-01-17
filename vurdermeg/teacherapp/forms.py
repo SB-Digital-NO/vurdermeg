@@ -1,5 +1,5 @@
 from baseapp.models import Assessment, AssessmentGroup, Question
-from django.forms import ModelForm
+from django.forms import ModelForm, formset_factory
 
 
 class AssessmentForm(ModelForm):
@@ -11,4 +11,7 @@ class AssessmentForm(ModelForm):
 class QuestionForm(ModelForm):
     class Meta:
         model = Question
-        fields = ["question_text"]
+        fields = ["data"]
+
+
+QuestionFormSet = formset_factory(QuestionForm)

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 't_newAssessment' %}" method="POST">
+    {% csrf_token %}
+    {{ assessment_form.as_p}}
+    {{ question_forms.management_form }}
+    {% for form in question_forms %}
+    {{ form.as_p }}
+    {% endfor %}
+    <input type="submit">
+</form>
+
+{% endblock %}
