@@ -13,13 +13,20 @@ class TeacherHome(ListView):
     """View for the home page for teachers."""
 
     template_name = "t_home.html"
-    # Content of the page
 
-    # Content of the page
     def get_queryset(self):
         # modifies the method that retrives the queryset object used to create the SQL-statements.
         self.now = datetime.now()
-        return Assessment.objects.filter(group_id__members=self.request.user)
+        return Assessment.objects.filter(group__members=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        # Method called to get the context of the html response
+        # Use this to set page content
+        context = super(TeacherHome, self).get_context_data(
+            **kwargs
+        )  # get the context of the ListView parent class
+        context["new_assessment_text"] = "Ny egenvurdering"
+        return context
 
 
 class TeacherNewAssessment(View):
@@ -32,7 +39,7 @@ class TeacherNewAssessment(View):
     def get(self, request, *args, **kwargs):
         """Method for GET request"""
         self.questions = Question.objects.filter(
-            assessments__group_id__members=self.request.user
+            assessments__group__members=self.request.user
         )
         self.assessment_form = AssessmentForm(request.GET or None)
         self.question_formset = QuestionFormSet()
@@ -99,3 +106,12 @@ class AssessmentGroupsView(View):
                 "assessment_group_form": self.assessment_group_form,
             },
         )
+
+
+class AssessmentsView(ListView):
+    """View for teachers assessments page."""
+
+    template_name = "t_assessments.html"
+
+    def get_queryset(self):
+        return Assessment.objects.filter(group__members=self.request.user)

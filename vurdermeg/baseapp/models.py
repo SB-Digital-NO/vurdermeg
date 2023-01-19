@@ -48,7 +48,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class AssessmentGroup(models.Model):
-    group_name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     members = models.ManyToManyField(User)
 
     def __str__(self) -> str:
@@ -57,7 +57,7 @@ class AssessmentGroup(models.Model):
 
 class Assessment(models.Model):
     name = models.CharField(max_length=150)
-    group_id = models.ForeignKey(AssessmentGroup, on_delete=models.CASCADE)
+    group = models.ForeignKey(AssessmentGroup, on_delete=models.CASCADE)
     assignment_time = models.DateTimeField()
     expiry_time = models.DateTimeField()
 
@@ -77,7 +77,7 @@ class Answer(models.Model):
 
 
 class Tag(models.Model):
-    tag_name = models.CharField(max_length=120)
+    name = models.CharField(max_length=120)
     assessments = models.ManyToManyField(Assessment)
 
     def __str__(self) -> str:

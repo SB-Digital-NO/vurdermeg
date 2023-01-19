@@ -6,8 +6,20 @@
 {% else %}
 Log in to view
 {% endif %}
+
+<div>
+    <a href="{% url 't_newAssessment' %}">{{ new_assessment_text }}</a>
+</div>
+
 Is there anything here?
 {% for obj in object_list %}
-<li>{{obj.name}}</li>
+<div>
+    <div>
+        {{obj.assignment_time}}
+    </div>
+    <div>
+        {{object.}}
+    </div>
+</div>
 {% endfor %}
 {% endblock %}
