@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<title>Teacher home</title>
+{% endblock %}
+
 {% block content %}
 {% if user.is_authenticated %}
 <li>User: {{ user.get_username }}</li>
@@ -18,7 +22,7 @@ Is there anything here?
         {{obj.assignment_time}}
     </div>
     <div>
-        {{object.}}
+        {{obj.group.name}}
     </div>
 </div>
 {% endfor %}
