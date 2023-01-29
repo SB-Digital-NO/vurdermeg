@@ -16,7 +16,7 @@ class TeacherHome(ListView):
 
     def get_queryset(self):
         # modifies the method that retrives the queryset object used to create the SQL-statements.
-        self.now = datetime.now()
+        self.now = datetime.now()  # <------ For use later when adding date filtering.
         return Assessment.objects.filter(group__members=self.request.user)
 
     def get_context_data(self, **kwargs):
@@ -25,7 +25,23 @@ class TeacherHome(ListView):
         context = super(TeacherHome, self).get_context_data(
             **kwargs
         )  # get the context of the ListView parent class
+        assessments = []
+        for assessment in context["object_list"].values():
+            # print(assessment)
+            dateTimeObj: datetime = assessment["assignment_time"]
+            ass_dict = {
+                "assignment_day": dateTimeObj.strftime("%A"),
+                "assignmet_week": dateTimeObj.strftime("%W"),
+                "assignment_time": dateTimeObj.strftime("%H:%M"),
+                "name": assessment["name"],
+                "group": context["object_list"].get(id=assessment["id"]).group.name,
+                "expiry_time": assessment["expiry_time"],
+            }
+            print(ass_dict)
+            assessments.append(ass_dict)
+        context["assessments"] = assessments  # Use this to access data in template
         context["new_assessment_text"] = "Ny egenvurdering"
+        # print(context)
         return context
 
 

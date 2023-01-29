@@ -12,6 +12,10 @@
 .card__date {
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+  background-color: #F2F2F2;
+  border-radius: 0.05em;
 }
 
 .card__smalltext {
@@ -24,12 +28,12 @@
 }
 
 .card--medium {
-  max-width: 350px;
+  max-width: 300px;
 }
 
 .card--three-columns {
-  -ms-grid-columns: (1 1)[1];
-      grid-template-columns: repeat(1 1 1);
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
 }
 
 .card--white {

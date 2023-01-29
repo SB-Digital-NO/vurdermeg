@@ -15,14 +15,14 @@ Log in to view
     <a href="{% url 't_newAssessment' %}">{{ new_assessment_text }}</a>
 </div>
 
-Is there anything here?
-{% for obj in object_list %}
+{% for assessment in assessments %}
 <div class="card card--medium card--three-columns card--white card--rounded card--drop-shadow">
-    <div>
-        {{obj.assignment_time}}
+    <div class="card__date">
+        {{ assessment.assignment_day }}
+        {{ assessment.assignment_time }}
     </div>
     <div>
-        {{obj.group.name}}
+        {{ assessment.group }}
     </div>
 </div>
 {% endfor %}
