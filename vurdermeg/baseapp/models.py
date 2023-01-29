@@ -52,7 +52,7 @@ class AssessmentGroup(models.Model):
     members = models.ManyToManyField(User)
 
     def __str__(self) -> str:
-        return self.group_name
+        return self.name
 
 
 class Assessment(models.Model):
