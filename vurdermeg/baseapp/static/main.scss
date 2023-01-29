@@ -1,3 +1,53 @@
+// Colors
+
+$background-grey: #F2F2F2;
+$card-white: #FFFFFF;
+$shadow-black: rgba(0, 0, 0, 0.2);
+
+// Blocks
+
+.body-light {
+    background-color: $background-grey;
+}
+
 .card {
-    display: block;
+    display: grid;
+    margin: 3%;
+    padding: 1% 2% 1% 2%;
+}
+
+// Elements
+
+.card__date {
+    display: grid;
+}
+
+.card__smalltext {
+    font-size: 1em;
+}
+
+.card__boldtext {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+// Modifiers
+.card--medium {
+    max-width: 350px;
+}
+
+.card--three-columns {
+    grid-template-columns: repeat(1 1 1);
+}
+
+.card--white {
+    background-color: $card-white;
+}
+
+.card--rounded {
+    border-radius: 0.4em;
+}
+
+.card--drop-shadow {
+    box-shadow: 1px 2px 5px $shadow-black;
 }

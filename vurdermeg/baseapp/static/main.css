@@ -1,4 +1,47 @@
+.body-light {
+  background-color: #F2F2F2;
+}
+
 .card {
-  display: block;
+  display: -ms-grid;
+  display: grid;
+  margin: 3%;
+  padding: 1% 2% 1% 2%;
+}
+
+.card__date {
+  display: -ms-grid;
+  display: grid;
+}
+
+.card__smalltext {
+  font-size: 1em;
+}
+
+.card__boldtext {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.card--medium {
+  max-width: 350px;
+}
+
+.card--three-columns {
+  -ms-grid-columns: (1 1)[1];
+      grid-template-columns: repeat(1 1 1);
+}
+
+.card--white {
+  background-color: #FFFFFF;
+}
+
+.card--rounded {
+  border-radius: 0.4em;
+}
+
+.card--drop-shadow {
+  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=main.css.map */
