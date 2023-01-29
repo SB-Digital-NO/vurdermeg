@@ -27,21 +27,20 @@ class TeacherHome(ListView):
         )  # get the context of the ListView parent class
         assessments = []
         for assessment in context["object_list"].values():
-            # print(assessment)
             dateTimeObj: datetime = assessment["assignment_time"]
             ass_dict = {
-                "assignment_day": dateTimeObj.strftime("%A"),
+                "assignment_day": dateTimeObj.strftime("%a"),
+                "assignment_date": dateTimeObj.strftime("%d"),
                 "assignmet_week": dateTimeObj.strftime("%W"),
                 "assignment_time": dateTimeObj.strftime("%H:%M"),
+                "assignment_month": dateTimeObj.strftime("%b"),
                 "name": assessment["name"],
                 "group": context["object_list"].get(id=assessment["id"]).group.name,
                 "expiry_time": assessment["expiry_time"],
             }
-            print(ass_dict)
             assessments.append(ass_dict)
         context["assessments"] = assessments  # Use this to access data in template
         context["new_assessment_text"] = "Ny egenvurdering"
-        # print(context)
         return context
 
 
