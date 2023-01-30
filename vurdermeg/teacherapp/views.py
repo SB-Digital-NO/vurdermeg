@@ -13,12 +13,13 @@ from .forms import AssessmentForm, AssessmentGroupForm, QuestionFormSet
 
 # --== ONLY FOR DEVELOPMENT ==--
 load_dotenv()
-ADMIN_LOGIN = os.getenv("ADMIN_LOGIN")
+ADMIN_LOGIN = os.getenv("PW")
+ADMIN_USER = os.getenv("ADMIN_USER")
 
 
 class LoginAdmin(View):
     def get(self, request, *args, **kwargs):
-        user = authenticate(username="admin@example.com", password=ADMIN_LOGIN)
+        user = authenticate(username=ADMIN_USER, password=ADMIN_LOGIN)
         if user is not None:
             login(request, user)
             return redirect("t_home")
