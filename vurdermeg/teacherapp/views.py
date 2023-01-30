@@ -1,12 +1,27 @@
 """Views for teacherapp."""
+import os
 from datetime import datetime
 
 from baseapp.models import Assessment, AssessmentGroup, Question
+from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from django.views.generic import ListView
 from django.views.generic.base import View
+from dotenv import load_dotenv
 
 from .forms import AssessmentForm, AssessmentGroupForm, QuestionFormSet
+
+# --== ONLY FOR DEVELOPMENT ==--
+load_dotenv()
+ADMIN_LOGIN = os.getenv("ADMIN_LOGIN")
+
+
+class LoginAdmin(View):
+    def get(self, request, *args, **kwargs):
+        user = authenticate(username="admin@example.com", password=ADMIN_LOGIN)
+        if user is not None:
+            login(request, user)
+            return redirect("t_home")
 
 
 class TeacherHome(ListView):

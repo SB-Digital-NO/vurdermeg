@@ -14,15 +14,17 @@ Log in to view
 <div>
     <a href="{% url 't_newAssessment' %}">{{ new_assessment_text }}</a>
 </div>
-
 {% for assessment in assessments %}
 <div class="card card--medium card--three-columns card--white card--rounded card--drop-shadow">
     <div class="card__date">
         <div>{{ assessment.assignment_day }}</div>
-        <div>{{ assessment.assignment_date }}</div>
+        <div class="card__date--bold">
+            {{ assessment.assignment_date }}
+        </div>
         <div>{{ assessment.assignment_month }}</div>
     </div>
-    <div>
+    <div>Range</div>
+    <div class="card__boldtext">
         {{ assessment.group }}
     </div>
 </div>
