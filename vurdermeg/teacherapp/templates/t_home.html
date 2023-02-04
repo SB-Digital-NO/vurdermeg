@@ -11,22 +11,51 @@
 Log in to view
 {% endif %}
 
-<div>
-    <a href="{% url 't_newAssessment' %}">{{ new_assessment_text }}</a>
-</div>
-{% for assessment in assessments %}
-<div class="card card--medium card--three-columns card--white card--rounded card--drop-shadow">
-    <div class="card__date">
-        <div>{{ assessment.assignment_day }}</div>
-        <div class="card__date--bold">
-            {{ assessment.assignment_date }}
+
+
+
+<div class="list-view">
+    <a style="text-decoration: none;" href="{% url 't_newAssessment' %}">
+        <div class="card card--rounded card--dashed-edge card--medium card--darkgray-edge card--icon-content-container">
+            <div class="icon-box icon__boldtext text--white ">+
+            </div>
+            <div class="card__boldtext text--darkgray">
+                {{ new_assessment_text }}
+            </div>
         </div>
-        <div>{{ assessment.assignment_month }}</div>
+
+    </a>
+    {% for assessment in assessments %}
+    <div class="card card--medium card--two-rows card--white card--rounded card--drop-shadow">
+        <div class="card__info-bar">
+            <div class="card__smalltext card__smalltext--right text--darkgray">
+                {% if assessment.is_assigned %}
+                Tildelt
+                {% else %}
+                Planlagt
+                {% endif %}
+            </div>
+            {% if assessment.is_assigned %}
+            <div class="dot-marker dot-marker--active"></div>
+            {% else %}
+            <div class="dot-marker dot-marker--inactive"></div>
+            {% endif %}
+        </div>
+        <div class="card__container">
+            <div class="card__date text--darkgray">
+                <div>{{ assessment.assignment_day }}</div>
+                <div class="card__date--bold text--darkgray">
+                    {{ assessment.assignment_date }}
+                </div>
+                <div class="text--darkgray">{{ assessment.assignment_month }}</div>
+            </div>
+            <div class="card__mediumtext text--darkgray">Range</div>
+            <div class="card__boldtext text--darkgray">
+                {{ assessment.group }}
+            </div>
+        </div>
     </div>
-    <div>Range</div>
-    <div class="card__boldtext">
-        {{ assessment.group }}
-    </div>
+    {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}

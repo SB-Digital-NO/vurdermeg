@@ -5,13 +5,14 @@ from datetime import datetime
 from baseapp.models import Assessment, AssessmentGroup, Question
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
+from django.utils import timezone
 from django.views.generic import ListView
 from django.views.generic.base import View
 from dotenv import load_dotenv
 
 from .forms import AssessmentForm, AssessmentGroupForm, QuestionFormSet
 
-# --== ONLY FOR DEVELOPMENT ==--
+# --== ONLY FOR DEVELOPMENT - REMOVE ON DEPLYMENT ==--
 load_dotenv()
 ADMIN_LOGIN = os.getenv("PW")
 ADMIN_USER = os.getenv("ADMIN_USER")
@@ -25,6 +26,9 @@ class LoginAdmin(View):
             return redirect("t_home")
 
 
+# --== -------------------- == --
+
+
 class TeacherHome(ListView):
     """View for the home page for teachers."""
 
@@ -32,7 +36,7 @@ class TeacherHome(ListView):
 
     def get_queryset(self):
         # modifies the method that retrives the queryset object used to create the SQL-statements.
-        self.now = datetime.now()  # <------ For use later when adding date filtering.
+        self.now = timezone.now()  # <------ For use later when adding date filtering.
         return Assessment.objects.filter(group__members=self.request.user)
 
     def get_context_data(self, **kwargs):
@@ -45,6 +49,7 @@ class TeacherHome(ListView):
         for assessment in context["object_list"].values():
             dateTimeObj: datetime = assessment["assignment_time"]
             ass_dict = {
+                "is_assigned": dateTimeObj <= self.now,
                 "assignment_day": dateTimeObj.strftime("%a"),
                 "assignment_date": dateTimeObj.strftime("%d"),
                 "assignmet_week": dateTimeObj.strftime("%W"),

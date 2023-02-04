@@ -3,6 +3,9 @@
 $background-grey: #F2F2F2;
 $card-white: #FFFFFF;
 $shadow-black: rgba(0, 0, 0, 0.2);
+$theme-color: #B98613;
+$grayedout: #EBEBEB;
+$text-darkGray: #484848;
 
 // Blocks
 
@@ -10,10 +13,39 @@ $shadow-black: rgba(0, 0, 0, 0.2);
     background-color: $background-grey;
 }
 
+.centered-column {
+    display: grid;
+    grid-template-columns: auto 300px auto;
+}
+
+.list-view {
+    display: grid;
+    justify-items: stretch;
+    padding: 0 10% 0 10%;
+}
+
 .card {
     display: grid;
     margin: 3%;
     padding: 1% 2% 1% 2%;
+}
+
+.icon-box {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-radius: 15%;
+    background-color: $theme-color;
+    width: 50px;
+    height: 50px;
+}
+
+.dot-marker {
+    display: block;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
 }
 
 // Elements
@@ -36,19 +68,55 @@ $shadow-black: rgba(0, 0, 0, 0.2);
 
 .card__boldtext {
     display: grid;
-    font-size: 1em;
+    text-decoration: none;
+    font-size: 1.2em;
     font-weight: bold;
     align-items: center;
     justify-items: center;
 }
 
+.card__mediumtext {
+    display: grid;
+    font-size: 1em;
+    align-items: center;
+    justify-items: center;
+}
+
+.card__container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding-bottom: 9px;
+}
+
+.card__info-bar {
+    display: grid;
+    grid-template-columns: 96% auto;
+}
+
+.icon__boldtext {
+    font-weight: bold;
+    font-size: 2em;
+}
+
 // Modifiers
 .card--medium {
+    min-width: 240px;
     max-width: 300px;
+    min-height: 80px;
 }
 
 .card--three-columns {
     grid-template-columns: repeat(3, auto);
+}
+
+.card--two-rows {
+    grid-template-rows: auto auto;
+}
+
+.card--icon-content-container {
+    grid-template-columns: 20% 80%;
+    justify-items: center;
+    align-items: center;
 }
 
 .card--white {
@@ -56,14 +124,64 @@ $shadow-black: rgba(0, 0, 0, 0.2);
 }
 
 .card--rounded {
-    border-radius: 0.4em;
+    border-radius: 0.6em;
 }
 
 .card--drop-shadow {
     box-shadow: 1px 2px 5px $shadow-black;
 }
 
+.card--dashed-edge {
+    border-style: dashed;
+    border-width: 3px;
+}
+
+.card--themed-edge {
+    border-color: $theme-color;
+}
+
+.card--darkgray-edge {
+    border-color: $text-darkGray;
+}
+
 .card__date--bold {
     font-size: 1em;
     font-weight: bold;
+}
+
+.card__smalltext--right {
+    display: grid;
+    justify-items: right;
+}
+
+.card__smalltext--upper {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.grid--two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.dot-marker--active {
+    background-color: $theme-color;
+    color: $theme-color;
+}
+
+.dot-marker--inactive {
+    background-color: $grayedout;
+    color: $grayedout;
+}
+
+.text--themed {
+    color: $theme-color;
+}
+
+.text--darkgray {
+    color: $text-darkGray;
+}
+
+.text--white {
+    color: $card-white;
 }
