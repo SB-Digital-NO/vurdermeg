@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="assessment">
+    <div class="assessment__settings">
+        <div class="assessment__title">Ny egenvurdering</div>
+        <div class="assessment__submit" style="justify-self: right;">Tildel</div>
+        <div class="assessment__label">Dato</div>
+        <div class="assessment__label" style="justify-self: right;">Tidspunkt</div>
+        <div class="assessment__choice">Date_selector</div>
+        <div class="assessment__choice" style="justify-self: right;">Time_Selector</div>
+        <div class="assessment__label assessment__label--double">Grupper</div>
+        <div class="selection-thumb selection-thumb--bordered assessment__select--large assessment__label--double">
+            <div class="assessment__select-label"></div>
+            <div class="selection-thumb__marker"></div>
+        </div>
+        <div class="assessment__minimize"></div>
+    </div>
+    <div class="assessment__questions">
+        <div class="assessment__add-question"></div>
+    </div>
+</div>
 
-<form action="{% url 't_newAssessment' %}" method="POST">
-    {% csrf_token %}
-    {{ assessment_form.as_p}}
-    {{ question_forms.management_form }}
-    {% for form in question_forms %}
-    {{ form.as_p }}
-    {% endfor %}
-    <input type="submit">
-</form>
+
 
 {% endblock %}

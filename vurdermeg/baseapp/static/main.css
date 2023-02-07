@@ -1,5 +1,7 @@
 .body-light {
   background-color: #F2F2F2;
+  padding: 0px;
+  margin: 0px;
 }
 
 .centered-column {
@@ -23,6 +25,18 @@
   padding: 1% 2% 1% 2%;
 }
 
+.assessment {
+  display: gird;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  max-width: 500px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 .icon-box {
   display: -ms-grid;
   display: grid;
@@ -43,6 +57,14 @@
   width: 8px;
   height: 8px;
   margin-left: 5px;
+}
+
+.selection-thumb {
+  display: -ms-grid;
+  display: grid;
+  border-radius: 50px;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
 }
 
 .card__date {
@@ -106,6 +128,119 @@
 .icon__boldtext {
   font-weight: bold;
   font-size: 2em;
+}
+
+.assessment__settings {
+  display: -ms-grid;
+  display: grid;
+  background-color: #FFFFFF;
+  margin: 10px 0px 10px 0px;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: (auto)[6];
+      grid-template-rows: repeat(6, auto);
+  padding: 10px 10px 5px 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.assessment__title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #484848;
+}
+
+.assessment__submit {
+  display: -ms-grid;
+  display: grid;
+  background-color: #B98613;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  border-radius: 15px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+  width: 120px;
+}
+
+.assessment__label {
+  padding-top: 10px;
+  padding-bottom: 3px;
+  font-size: 0.8em;
+  color: #484848;
+}
+
+.assessment__select {
+  height: 26px;
+  max-width: 136px;
+}
+
+.assessment__select-label {
+  padding: 2px 0 2px 10px;
+}
+
+.assessment__minimize {
+  margin-top: 5px;
+  display: block;
+  width: 30px;
+  height: 2px;
+  border: solid #484848;
+  border-width: 2px 0 2px;
+  -ms-grid-column: span 2;
+      grid-column-start: span 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.assessment__questions {
+  display: -ms-grid;
+  display: grid;
+  background-color: #B98613;
+}
+
+.assessment__add-question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  height: 38px;
+  padding-bottom: 2px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: center;
+  background-color: #FFFFFF;
+  color: #B98613;
+  font-size: 1.5em;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.assessment__add-question:after {
+  content: "+";
+}
+
+.selection-thumb__marker {
+  display: block;
+  position: relative;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  right: 10px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border: solid #484848;
+  border-width: 0 2px 2px 0;
+  rotate: 45deg;
 }
 
 .card--medium {
@@ -173,6 +308,22 @@
 .card__smalltext--upper {
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+.selection-thumb--bordered {
+  border: 2px solid #484848;
+  background-color: #FFFFFF;
+}
+
+.assessment__label--double {
+  -ms-grid-column: span 2;
+      grid-column-start: span 2;
+}
+
+.assessment__select--large {
+  height: 26px;
+  min-width: 240px;
+  max-width: 410px;
 }
 
 .grid--two-columns {

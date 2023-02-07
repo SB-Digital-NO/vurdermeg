@@ -80,6 +80,7 @@ class TeacherNewAssessment(View):
         self.assessment_form = AssessmentForm(request.GET or None)
         self.question_formset = QuestionFormSet()
         self.ctxt = {
+            "groups": AssessmentGroup.objects.filter(members=self.request.user),
             "assessment_form": self.assessment_form,
             "question_forms": self.question_formset,
             "questions": self.questions,
