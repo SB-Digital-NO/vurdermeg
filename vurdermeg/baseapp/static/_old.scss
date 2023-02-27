@@ -11,8 +11,10 @@ $text-darkGray: #484848;
 $font-helvetica: Helvetica, Arial, sans-serif;
 
 // ======
-// Blocks
+// Baseline
 // ======
+
+
 
 .body-light {
     background-color: $background-grey;
@@ -35,11 +37,7 @@ $font-helvetica: Helvetica, Arial, sans-serif;
     padding: 0 10% 0 10%;
 }
 
-.card {
-    display: grid;
-    margin: 3%;
-    padding: 1% 2% 1% 2%;
-}
+
 
 .assessment {
     display: gird;
@@ -89,48 +87,7 @@ $font-helvetica: Helvetica, Arial, sans-serif;
 // =========
 
 // .card
-.card__date {
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    background-color: $background-grey;
-    border-radius: 0.5em;
-    align-content: center;
-    justify-content: center;
-    padding: 0.05em;
-    width: 60px;
-    height: 60px;
-}
 
-.card__smalltext {
-    font-size: 0.5em;
-}
-
-.card__boldtext {
-    display: grid;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    align-items: center;
-    justify-items: center;
-}
-
-.card__mediumtext {
-    display: grid;
-    font-size: 1em;
-    align-items: center;
-    justify-items: center;
-}
-
-.card__container {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    padding-bottom: 9px;
-}
-
-.card__info-bar {
-    display: grid;
-    grid-template-columns: 96% auto;
-}
 
 // .icon
 .icon__boldtext {
@@ -266,69 +223,7 @@ $font-helvetica: Helvetica, Arial, sans-serif;
 // Modifiers
 // =========
 
-.card--medium {
-    min-width: 240px;
-    max-width: 300px;
-    min-height: 80px;
-}
 
-.card--three-columns {
-    grid-template-columns: repeat(3, auto);
-}
-
-.card--two-rows {
-    grid-template-rows: auto auto;
-}
-
-.card--icon-content-container {
-    grid-template-columns: 20% 80%;
-    justify-items: center;
-    align-items: center;
-}
-
-.card--white {
-    background-color: $card-white;
-}
-
-.card--light-gray {
-    background-color: $background-grey;
-}
-
-.card--rounded {
-    border-radius: 0.6em;
-}
-
-.card--drop-shadow {
-    box-shadow: 1px 2px 5px $shadow-black;
-}
-
-.card--dashed-edge {
-    border-style: dashed;
-    border-width: 3px;
-}
-
-.card--themed-edge {
-    border-color: $theme-color;
-}
-
-.card--darkgray-edge {
-    border-color: $text-darkGray;
-}
-
-.card__date--bold {
-    font-size: 1em;
-    font-weight: bold;
-}
-
-.card__smalltext--right {
-    display: grid;
-    justify-items: right;
-}
-
-.card__smalltext--upper {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
 
 // selection
 
