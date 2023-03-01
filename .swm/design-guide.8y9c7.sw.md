@@ -1,11 +1,21 @@
 ---
 id: 8y9c7
-title: CSS structure and rules
+title: Design guide
 file_version: 1.1.2
-app_version: 1.3.3
+app_version: 1.3.5
 ---
 
+## What is this document?
+
+This document sets the ground rules for developing a cohesive style and user experience throughout the app. It covers rules and best practices for css and html, as well as the interaction between the two.
+
+<br/>
+
+* * *
+
 ## Rules
+
+### CSS
 
 1.  Use SCSS for editing styles. Never edit the compiled css files directly.
     
@@ -26,6 +36,15 @@ app_version: 1.3.3
 5.  The box-sizing property of **all** elements is set to border-box, meaning margins, padding and borders are included in size properties.
     
 
+### HTML
+
+1.  Do **not** use divs for interactive content, such as buttons and links. This ensures that intended functionality of interactive components are not lost (ie. focusing buttons, pressing buttons with enter, button not showing up as button in accessibility views etc.)
+    
+2.  Use _nav_ for navigation menus.
+    
+3.  Use _section_ where its natural.
+    
+
 ## BEM
 
 ### Blocks
@@ -36,7 +55,12 @@ A block is an entity that is meaningful on its own.
 
 ### Modifiers
 
-## Sitemap
+## CSS directory tree
+
+```bash
+|-- styles.scss
+    
+```
 
 `📄 vurdermeg/baseapp/static`<br/>
 |-- styles.scss // main document, imports all subdocuments and compiles to styles.css<br/>
