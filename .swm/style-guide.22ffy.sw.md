@@ -2,16 +2,22 @@
 id: 22ffy
 title: Style Guide
 file_version: 1.1.2
-app_version: 1.3.5
+app_version: 1.3.8
 ---
 
 ### What is this?
 
 To be able to maintain a consistent design and experience of the app, this _Style Guide_ will set the ground rules for both **_developing new_** components as well as **_using existing_** components.
 
+The first part of this document is the style guide of the app, the general guidelines for designing new components and patterns in a way that ensures a cohesive visual design.
+
+The second part of this document consists of two libraries, the component library and the pattern library. The component library showcases all available components, in all states and variations. The pattern library showcases all available patterns.
+
 * * *
 
 ## Index
+
+**Style guide**
 
 *   Colours
     
@@ -24,19 +30,40 @@ To be able to maintain a consistent design and experience of the app, this _Styl
 *   Components
     
 
-<br/>
+**Libraries**
+
+*   Component Library
+    
+*   Pattern Library
+    
 
 * * *
 
 ## Colours
+
+Base colours are named as follows:
+
+*   Extra Extra dark
+    
+*   Extra dark
+    
+*   Dark
+    
+*   Light
+    
+*   Extra light
+    
+*   Extra extra light
+
+<br/>
+
+<div align="center"><img src="https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FZ2l0aHViJTNBJTNBdnVyZGVybWVnJTNBJTNBVGhvbWFzU3RvcmhhdWc%3D%2F93b178b6-1775-4093-a208-835df9b1d719.png?alt=media&token=2a49f35b-69d7-4a6f-a05d-e0d1ef3f4f46" style="width:'100%'"/></div>
 
 <br/>
 
 * * *
 
 ## Typography
-
-<br/>
 
 * * *
 
@@ -91,6 +118,96 @@ Extra large - Screen widths from 1200px and above
 <br/>
 
 <div align="center"><img src="https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FZ2l0aHViJTNBJTNBdnVyZGVybWVnJTNBJTNBVGhvbWFzU3RvcmhhdWc%3D%2F5b8290b2-75fe-410f-ac1f-c5f1481a3d92.png?alt=media&token=2a6978df-5e65-4fe5-af08-c31aa36c4364" style="width:'100%'"/></div>
+
+<br/>
+
+* * *
+
+## Icons
+
+<br/>
+
+* * *
+
+## Components and patterns
+
+Components should follow these sets of rules to comply with the style guide.
+
+### Colours
+
+The different colours in the colour palette are used to signal different things. These are guidelines, not rules.
+
+#### **Dark and light mode**
+
+In light mode, the _extra extra light_ colour is used as the main background colour for the _body_ element. It might also be used on elements that are behind the frontmost element, if this makes graphically sense.
+
+In dark mode, the _extra dark_ colour is used as the main background colour for the body element, with lighter tones is used on elements further in front.
+
+**Primary Colours**
+
+*   **Attention** should be used to draw the users attention to an action, therefore should be mainly used on call to action elements such as buttons and anchors.
+    
+*   **Concentrate** should be used to mark sections of interest or focus. Use this as background colour for sections with significant content, or as an accent colour for focused elements such as text inputs.
+    
+*   **Regard** is used to draw the users attention to warnings or important notifications.
+    
+
+**Secondary Colours**
+
+*   **Chosen** should be used to indicate a selected element or a chosen action.
+    
+*   **Remember** should be used to remind the user of upcoming events or of notifications of lesser importance.
+    
+*   **Recall** should be used to indicate that an action is needed. This might be a missing input, missing date or time etc.
+    
+
+### Size
+
+**Height**
+
+The height of elements depends on its content, padding and margins. It is desirable to follow the 4px rule (any size is divisible by 4).
+
+/
+
+**Padding and margins**
+
+<br/>
+
+### Drop shadows
+
+<br/>
+
+### Corner radius
+
+<br/>
+
+* * *
+
+## Component library
+
+### Buttons
+
+\-- **Light**
+
+<br/>
+
+<div align="center"><img src="https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FZ2l0aHViJTNBJTNBdnVyZGVybWVnJTNBJTNBVGhvbWFzU3RvcmhhdWc%3D%2Fc7b29a91-d516-4a48-99a6-95772291e3d2.png?alt=media&token=77496eb0-c2a8-4a8c-9dd1-8d7e079ab339" style="width:'100%'"/></div>
+
+<br/>
+
+### Dropdowns
+
+\-- **Light**
+
+<br/>
+
+<div align="center"><img src="https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FZ2l0aHViJTNBJTNBdnVyZGVybWVnJTNBJTNBVGhvbWFzU3RvcmhhdWc%3D%2Fdd98293a-20bd-41f5-a82b-141847b4c529.png?alt=media&token=8e4e9c95-19e3-4b0f-b455-3e0ce3eaa750" style="width:'100%'"/></div>
+
+<br/>
+
+* * *
+
+## Pattern library
 
 <br/>
 
