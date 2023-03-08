@@ -125,8 +125,6 @@ Extra large - Screen widths from 1200px and above
 
 ## Icons
 
-<br/>
-
 * * *
 
 ## Components and patterns
@@ -167,19 +165,19 @@ In dark mode, the _extra dark_ colour is used as the main background colour for 
 
 The height of elements depends on its content, padding and margins. It is desirable to follow the 4px rule (any size is divisible by 4).
 
-/
+<br/>
 
 **Padding and margins**
 
-<br/>
-
 ### Drop shadows
 
-<br/>
+Drop shadows should be used to signify a hierarchy of elements or whether or not an element is active. Text fields and areas will for example only have a drop shadow when focused. Drop down menus also have a drop shadow, elevating the menu element to the top of the hierarchy.
+
+A drop shadow is subtle and relatively large. It is only offset in y-direction. It is highly blurred to give the illusion of a soft lighted environment.
+
+> Drop shadows has these settings: x-offset = 0, y-offset = 10px, colour: extra extra dark gray, 16% opacity, blur: 26.
 
 ### Corner radius
-
-<br/>
 
 * * *
 
@@ -202,6 +200,16 @@ The height of elements depends on its content, padding and margins. It is desira
 <br/>
 
 <div align="center"><img src="https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FZ2l0aHViJTNBJTNBdnVyZGVybWVnJTNBJTNBVGhvbWFzU3RvcmhhdWc%3D%2Fdd98293a-20bd-41f5-a82b-141847b4c529.png?alt=media&token=8e4e9c95-19e3-4b0f-b455-3e0ce3eaa750" style="width:'100%'"/></div>
+
+<br/>
+
+### Text Fields
+
+\-- **Light**
+
+<br/>
+
+<div align="center"><img src="https://firebasestorage.googleapis.com/v0/b/swimmio-content/o/repositories%2FZ2l0aHViJTNBJTNBdnVyZGVybWVnJTNBJTNBVGhvbWFzU3RvcmhhdWc%3D%2Fad531966-4915-4ba1-93d4-619df7b08116.png?alt=media&token=4eaf1468-7371-4311-b2ed-1fbddf6d53c7" style="width:'100%'"/></div>
 
 <br/>
 
