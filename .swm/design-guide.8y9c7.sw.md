@@ -7,7 +7,7 @@ app_version: 1.3.8
 
 ## What is this document?
 
-This document sets the ground rules for developing a cohesive style and user experience throughout the app. It covers rules and best practices for css and html, as well as the interaction between the two.
+This document should serve as a reference manual for designing patterns and pages using existing components and styles. It includes a complete list of css classes with a comprehensive guide on how to use them.
 
 * * *
 
