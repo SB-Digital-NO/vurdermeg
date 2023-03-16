@@ -2,14 +2,12 @@
 id: 8y9c7
 title: Design guide
 file_version: 1.1.2
-app_version: 1.3.5
+app_version: 1.3.8
 ---
 
 ## What is this document?
 
-This document sets the ground rules for developing a cohesive style and user experience throughout the app. It covers rules and best practices for css and html, as well as the interaction between the two.
-
-<br/>
+This document should serve as a reference manual for designing patterns and pages using existing components and styles. It includes a complete list of css classes with a comprehensive guide on how to use them.
 
 * * *
 
@@ -19,21 +17,25 @@ This document sets the ground rules for developing a cohesive style and user exp
 
 1.  Use SCSS for editing styles. Never edit the compiled css files directly.
     
-2.  SCSS rules are organised in separate files, each encapsulating a block and its related elements and modifiers (see BEM), and imported into the main styles.scss file, which in turn is compiled into the main styles.css stylesheet.
+2.  Application styles extend Bootstrap functionality (Bootstrap v 5.3).
     
-    1.  Separate files are _modules._
+    1.  Grid
         
-    2.  Modules are named using a prefixed underscore, ie. _\_cards.scss._ This tells the compiler to ignore the module.
-        
-    3.  Modules are imported with **@use _module_** in the _styles.scss_ file.
-        
-    4.  Modules are stored either in the _/baseline_ directory, for global rules, or the _/custom_ directory, for localised rules.
-        
-3.  Use baseline CSS classes as often as possible.
+3.  SCSS rules are organised in separate files, each encapsulating a block and its related elements and modifiers (see BEM), and imported into the main styles.scss file, which in turn is compiled into the main styles.css stylesheet.
     
-4.  Follow the BEM style-guide rules of naming and utilisation.
+    1.  Separate files are _members._
+        
+    2.  Members are named using a prefixed underscore, ie. _\_cards.scss._ This tells the compiler to ignore the member.
+        
+    3.  Members are imported with **@import _member_** in the _styles.scss_ file.
+        
+    4.  Members are stored either in the _/baseline_ directory, for global rules, or the _/custom_ directory, for localised rules.
+        
+4.  Use baseline CSS classes as often as possible.
     
-5.  The box-sizing property of **all** elements is set to border-box, meaning margins, padding and borders are included in size properties.
+5.  Follow the BEM style-guide rules of naming and utilisation.
+    
+6.  The box-sizing property of **all** elements is set to border-box, meaning margins, padding and borders are included in size properties.
     
 
 ### HTML
