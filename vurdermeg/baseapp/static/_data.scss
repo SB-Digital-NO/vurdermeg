@@ -1,0 +1,44 @@
+:root {
+    [data-vm-theme="light"] {
+
+        @each $color,
+        $value in $vm-theme-colors {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $attentions {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $concentrates {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $regards {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $remembers {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $chosens {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $recalls {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+
+        @each $color,
+        $value in $vm-grays {
+            --#{$custom-prefix}#{$color}: #{$value};
+        }
+    }
+}

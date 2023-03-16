@@ -1,8 +1,82 @@
-/*
-INDEX
+// INDEX
 
--Baseline
-    -cards
-*/
+// -- IMPORTS --
+// - 1. Functions
+//     Bootstrap functions
+// - 2. Default variable overrides
 
-@use 'baseline/cards';
+// - 3. Bootstrap stylesheets
+//     variables
+//     variables-dark
+// - 4. Default map overrides
+
+// - 5. Required Bootstrap parts
+//     maps
+//     mixins
+//     root
+// - 6. Optional Bootstrap parts
+
+// - 7. Baseline imports
+
+// - 8. Custom imports
+
+
+//
+// 1. Include functions 
+//
+@import "bootstrap/scss/functions";
+@import "functions";
+//
+// 2. Default variable overrides
+//
+
+* {
+    box-sizing: border-box;
+}
+
+$gutters: (
+    0: 0,
+    1: 8px,
+    2: 16px
+);
+
+//
+// 3. Include variables
+//
+
+// Bootstrap
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Custom
+@import "variables";
+
+//
+// 4. Default map overrides
+//
+
+
+//
+// 5. Include remainder of required Bootstrap parts
+//
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+
+//
+// 6. Include optional Bootstrap parts
+//
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+//
+// 7. Include Baseline parts
+//
+@import "data";
+
+@import "baseline/buttons";
+@import 'baseline/cards';
+
+//
+// 8. Inlcude Custom parts
+//

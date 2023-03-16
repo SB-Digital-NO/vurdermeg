@@ -9,46 +9,17 @@
     </div>
     {% endfor %}
 </div>
-<div class="assessment">
-    <div class="assessment__settings">
-        <div class="assessment__title assessment__item">Ny egenvurdering</div>
-        <div class="assessment__submit assessment__item" style="justify-self: right;">Tildel</div>
-        <div class="assessment__label assessment__item">Dato</div>
-        <div class="assessment__label assessment__item" style="justify-self: right;">Tidspunkt</div>
-        <div class="assessment__choice assessment__item">Date_selector</div>
-        <div class="assessment__choice assessment__item" style="justify-self: right;">Time_Selector</div>
-        <div class="assessment__label assessment__label--double assessment__item">Grupper</div>
-        <div class="selection-thumb selection-thumb--bordered assessment__select--large assessment__label--double"
-            id="groupSelector">
-            <div class="assessment__select-label"></div>
-            <div class="selection-thumb__marker" id="groupSelectMarker"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Ny vurdering</h2>
         </div>
-        <div class="assessment__minimize assessment__item"></div>
-    </div>
-    <div class="assessment__questions">
-        <div class="assessment__chose-question card card--rounded card--drop-shadow card--light-gray"
-            style="display:none" id="id_choseQuestionDiv">
-            <div class="assessment__title">Velg type spørsmål</div>
-            <div class="card card--white card--rounded card--drop-shadow">
-                <div class="assessment__icon"></div>
-                <div class="assessment__title">Alternativer</div>
-            </div>
-            <div class="card card--white card--rounded card--drop-shadow">
-                <div class="assessment__icon"></div>
-                <div class="assessment__title">Tekst</div>
-            </div>
-            <div class="card card--white card--rounded card--drop-shadow">
-                <div class="assessment__icon"></div>
-                <div class="assessment__title">Rangering</div>
-            </div>
-            <div class="card card--white card--rounded card--drop-shadow">
-                <div class="assessment__icon"></div>
-                <div class="assessment__title">Øyeblikk</div>
-            </div>
+        <div class="col">
+            <input type="button" value="Tildel" class="btn">
         </div>
-        <div class="assessment__add-question" id="id_addQuestion"></div>
     </div>
 </div>
+
 <form action="" method="post">
     {% csrf_token %}
     {{ assessment_form }}

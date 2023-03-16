@@ -1,0 +1,201 @@
+// Variables
+
+// Variable names should follow the '$component-state-property-value' 
+// naming convention.
+
+
+//
+// Colors
+//
+
+// Primary
+
+$attention: #A67B2D;
+$concentrate: #9CBCD9;
+$regard: #734636;
+
+// Secondary
+
+$remember: #5D7CA6;
+$chosen: #F2B441;
+$recall: #BF6E50;
+
+// Shades
+
+$tint-100: 80%;
+$tint-200: 60%;
+$tint-300: 40%;
+$tint-400: 20%;
+$shade-600: 20%;
+$shade-700: 40%;
+
+$attention-100: tint-color($attention, $tint-100);
+$attention-200: tint-color($attention, $tint-200);
+$attention-300: tint-color($attention, $tint-300);
+$attention-400: tint-color($attention, $tint-400);
+$attention-500: $attention;
+$attention-600: shade-color($attention, $shade-600);
+$attention-700: shade-color($attention, $shade-700);
+
+$concentrate-100: tint-color($concentrate, $tint-100);
+$concentrate-200: tint-color($concentrate, $tint-200);
+$concentrate-300: tint-color($concentrate, $tint-300);
+$concentrate-400: tint-color($concentrate, $tint-400);
+$concentrate-500: $concentrate;
+$concentrate-600: shade-color($concentrate, $shade-600);
+$concentrate-700: shade-color($concentrate, $shade-700);
+
+$regard-100: tint-color($regard, $tint-100);
+$regard-200: tint-color($regard, $tint-200);
+$regard-300: tint-color($regard, $tint-300);
+$regard-400: tint-color($regard, $tint-400);
+$regard-500: $regard;
+$regard-600: shade-color($regard, $shade-600);
+$regard-700: shade-color($regard, $shade-700);
+
+$remember-100: tint-color($remember, $tint-100);
+$remember-200: tint-color($remember, $tint-200);
+$remember-300: tint-color($remember, $tint-300);
+$remember-400: tint-color($remember, $tint-400);
+$remember-500: $remember;
+$remember-600: shade-color($remember, $shade-600);
+$remember-700: shade-color($remember, $shade-700);
+
+$chosen-100: tint-color($chosen, $tint-100);
+$chosen-200: tint-color($chosen, $tint-200);
+$chosen-300: tint-color($chosen, $tint-300);
+$chosen-400: tint-color($chosen, $tint-400);
+$chosen-500: $chosen;
+$chosen-600: shade-color($chosen, $shade-600);
+$chosen-700: shade-color($chosen, $shade-700);
+
+$recall-100: tint-color($recall, $tint-100);
+$recall-200: tint-color($recall, $tint-200);
+$recall-300: tint-color($recall, $tint-300);
+$recall-400: tint-color($recall, $tint-400);
+$recall-500: $recall;
+$recall-600: shade-color($recall, $shade-600);
+$recall-700: shade-color($recall, $shade-700);
+
+$vm-theme-colors: (
+    "attention": $attention,
+    "concentrate": $concentrate,
+    "regard": $regard,
+    "remember": $remember,
+    "chosen": $chosen,
+    "recall": $recall
+);
+
+$attentions: (
+    "attention-100": $attention-100,
+    "attention-200": $attention-200,
+    "attention-300": $attention-300,
+    "attention-400": $attention-400,
+    "attention-500": $attention-500,
+    "attention-600": $attention-600,
+    "attention-700": $attention-700,
+);
+
+$concentrates: (
+    "concentrate-100": $concentrate-100,
+    "concentrate-200": $concentrate-200,
+    "concentrate-300": $concentrate-300,
+    "concentrate-400": $concentrate-400,
+    "concentrate-500": $concentrate-500,
+    "concentrate-600": $concentrate-600,
+    "concentrate-700": $concentrate-700,
+);
+
+$regards: (
+    "regard-100": $regard-100,
+    "regard-200": $regard-200,
+    "regard-300": $regard-300,
+    "regard-400": $regard-400,
+    "regard-500": $regard-500,
+    "regard-600": $regard-600,
+    "regard-700": $regard-700,
+);
+
+$remembers: (
+    "remember-100": $remember-100,
+    "remember-200": $remember-200,
+    "remember-300": $remember-300,
+    "remember-400": $remember-400,
+    "remember-500": $remember-500,
+    "remember-600": $remember-600,
+    "remember-700": $remember-700,
+);
+
+$chosens: (
+    "chosen-100": $chosen-100,
+    "chosen-200": $chosen-200,
+    "chosen-300": $chosen-300,
+    "chosen-400": $chosen-400,
+    "chosen-500": $chosen-500,
+    "chosen-600": $chosen-600,
+    "chosen-700": $chosen-700,
+);
+
+$recalls: (
+    "recall-100": $recall-100,
+    "recall-200": $recall-200,
+    "recall-300": $recall-300,
+    "recall-400": $recall-400,
+    "recall-500": $recall-500,
+    "recall-600": $recall-600,
+    "recall-700": $recall-700,
+);
+
+$vm-color-variants: (
+    "attention": $attentions,
+    "concentrate": $concentrates,
+    "regard": $regards,
+    "remember": $remembers,
+    "chosen": $chosens,
+    "recall": $recalls,
+);
+
+// Grays
+
+$black: #000000;
+$xx-dark: #1A1A1A;
+$x-dark: #333333;
+$dark: #4D4D4D;
+$light: #808080;
+$x-light: #B3B3B3;
+$xx-light: #F2F2F2;
+$white: #FFFFFF;
+
+$vm-grays: (
+    "black": $black,
+    "xx-dark": $xx-dark,
+    "x-dark": $x-dark,
+    "dark": $dark,
+    "light": $light,
+    "x-light": $x-light,
+    "xx-light": $xx-light,
+);
+
+//
+// Fonts
+//
+
+//
+// Borders
+//
+
+$border-radius-primary: 20px;
+$border-radius-secondary: 10px;
+
+//
+// Button
+//
+
+$btn-color: $attention;
+$btn-hover-color: $attention-600;
+$btn-focus-color: $attention-600;
+$btn-active-color: $attention-700;
+$btn-focus-outline-color: $attention-100;
+
+
+$custom-prefix: vm-;
