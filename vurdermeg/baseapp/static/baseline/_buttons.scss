@@ -9,36 +9,46 @@
     --#{$custom-prefix}btn-border: solid;
     --#{$custom-prefix}btn-border-width: 0;
     --#{$custom-prefix}btn-border-color: transparent;
+    --#{$custom-prefix}btn-padding: 8px 16px;
     --#{$custom-prefix}btn-hover-color: #{$white};
     --#{$custom-prefix}btn-hover-bg: #{$btn-hover-color};
     --#{$custom-prefix}btn-hover-border-width: 0;
     --#{$custom-prefix}btn-hover-border-color: transparent;
+    --#{$custom-prefix}btn-hover-padding: 8px 16px;
+    --#{$custom-prefix}btn-hover-move: -2px;
     --#{$custom-prefix}btn-focus-color: #{$white};
     --#{$custom-prefix}btn-focus-bg: #{$btn-focus-color};
     --#{$custom-prefix}btn-focus-border-width: 0;
     --#{$custom-prefix}btn-focus-border-color: transparent;
     --#{$custom-prefix}btn-focus-outline: #{$btn-focus-outline-color};
+    --#{$custom-prefix}btn-focus-padding: 8px 16px;
     --#{$custom-prefix}btn-active-color: #{$white};
     --#{$custom-prefix}btn-active-bg: #{$btn-active-color};
 
-
-
     display: inline-block;
-    padding: 8px 16px;
+    padding: var(--#{$custom-prefix}btn-padding);
     font-family: var(--#{$prefix}btn-font-family);
     background-color: var(--#{$custom-prefix}btn-bg);
     border-radius: var(--#{$custom-prefix}btn-border-radius);
     color: var(--#{$custom-prefix}btn-color);
     border: var(--#{$custom-prefix}btn-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-border-color);
 
+
     &:hover {
+
+        padding: var(--#{$custom-prefix}btn-hover-padding);
         color: var(--#{$custom-prefix}btn-hover-color);
         background-color: var(--#{$custom-prefix}btn-hover-bg);
         border: var(--#{$custom-prefix}btn-hover-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-hover-border-color);
+        animation-name: btn;
+        animation-duration: 2s;
+        transform: translateY(-2px);
+        transition: transform 2s;
 
     }
 
     &:focus-visible {
+        padding: var(--#{$custom-prefix}btn-focus-padding);
         color: var(--#{$custom-prefix}btn-focus-color);
         background-color: var(--#{$custom-prefix}btn-hover-bg);
         border: var(--#{$custom-prefix}btn-focus-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-focus-border-color);
@@ -46,6 +56,7 @@
     }
 
     &:active {
+        padding: 8px 16px;
         color: var(--#{$custom-prefix}btn-active-color);
         background-color: var(--#{$custom-prefix}btn-active-bg);
         border: 0 solid transparent;
@@ -62,15 +73,22 @@ $value in $vm-theme-colors {
         --#{$custom-prefix}btn-border: solid;
         --#{$custom-prefix}btn-border-width: 1px;
         --#{$custom-prefix}btn-border-color: #{$value};
-        --#{$custom-prefix}btn-hover-color: #{$value};
-        --#{$custom-prefix}btn-hover-bg: #{get-color-variant($color, 100)};
-        --#{$custom-prefix}btn-focus-border-width: 2px;
-        --#{$custom-prefix}btn-focus-border-color: #{$value};
+        --#{$custom-prefix}btn-padding: 7px 15px;
+        --#{$custom-prefix}btn-hover-color: #{$white};
+        --#{$custom-prefix}btn-hover-bg: #{$value};
+        --#{$custom-prefix}btn-hover-border: solid;
+        --#{$custom-prefix}btn-hover-border-width: 2px;
+        --#{$custom-prefix}btn-hover-border-color: #{$value};
+        --#{$custom-prefix}btn-hover-padding: 6px 14px;
         --#{$custom-prefix}btn-focus-color: #{$value};
         --#{$custom-prefix}btn-focus-bg: #{get-color-variant($color, 100)};
+        --#{$custom-prefix}btn-focus-border: solid;
+        --#{$custom-prefix}btn-focus-border-width: 2px;
+        --#{$custom-prefix}btn-focus-border-color: #{$value};
+        --#{$custom-prefix}btn-focus-padding: 6px 14px;
         --#{$custom-prefix}btn-focus-outline: #{get-color-variant($color, 100)};
         --#{$custom-prefix}btn-active-color: #{$white};
-        --#{$custom-prefix}btn-active-bg: #{get-color-variant($color, 100)};
+        --#{$custom-prefix}btn-active-bg: #{get-color-variant($color, 600)};
 
     }
 }
@@ -85,14 +103,41 @@ $value in $vm-theme-colors {
         --#{$custom-prefix}btn-border: dashed;
         --#{$custom-prefix}btn-border-width: 1px;
         --#{$custom-prefix}btn-border-color: #{$value};
+        --#{$custom-prefix}btn-padding: 7px 15px;
         --#{$custom-prefix}btn-hover-color: #{$value};
         --#{$custom-prefix}btn-hover-bg: #{get-color-variant($color, 100)};
-        --#{$custom-prefix}btn-focus-border-width: 2px;
-        --#{$custom-prefix}btn-focus-border-color: #{$value};
+        --#{$custom-prefix}btn-hover-border: dashed;
+        --#{$custom-prefix}btn-hover-border-width: 2px;
+        --#{$custom-prefix}btn-hover-border-color: #{$value};
+        --#{$custom-prefix}btn-hover-padding: 6px 14px;
         --#{$custom-prefix}btn-focus-color: #{$value};
         --#{$custom-prefix}btn-focus-bg: #{get-color-variant($color, 100)};
+        --#{$custom-prefix}btn-focus-border: dashed;
+        --#{$custom-prefix}btn-focus-border-width: 2px;
+        --#{$custom-prefix}btn-focus-border-color: #{$value};
+        --#{$custom-prefix}btn-focus-padding: 6px 14px;
         --#{$custom-prefix}btn-focus-outline: #{get-color-variant($color, 100)};
         --#{$custom-prefix}btn-active-color: #{$white};
         --#{$custom-prefix}btn-active-bg: #{get-color-variant($color, 100)};
+    }
+}
+
+@keyframes btn {
+    30% {
+        transform: scale(0.7, 0.9);
+        transform: translateY(-1px);
+    }
+
+    60% {
+        transform: scale(1.2, 1);
+    }
+
+    80% {
+        transform: scale(0.9, 1);
+    }
+
+    100% {
+        transform: scale(1, 1);
+        transform: translateY(-2px);
     }
 }
