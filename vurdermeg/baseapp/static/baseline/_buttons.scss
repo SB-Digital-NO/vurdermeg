@@ -22,6 +22,7 @@
     --#{$custom-prefix}btn-focus-border-color: transparent;
     --#{$custom-prefix}btn-focus-outline: #{$btn-focus-outline-color};
     --#{$custom-prefix}btn-focus-padding: 8px 16px;
+    --#{$custom-prefix}btn-focus-move: -2px;
     --#{$custom-prefix}btn-active-color: #{$white};
     --#{$custom-prefix}btn-active-bg: #{$btn-active-color};
 
@@ -32,22 +33,24 @@
     border-radius: var(--#{$custom-prefix}btn-border-radius);
     color: var(--#{$custom-prefix}btn-color);
     border: var(--#{$custom-prefix}btn-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-border-color);
+    transform: translateY(var(--#{$custom-prefix}Y));
+    transition: transform 0.2s ease, background-color 0.1s ease, color 0.1s ease, outline 0.2s ease;
 
 
     &:hover {
+        --#{$custom-prefix}Y: var(--#{$custom-prefix}btn-hover-move);
 
         padding: var(--#{$custom-prefix}btn-hover-padding);
         color: var(--#{$custom-prefix}btn-hover-color);
         background-color: var(--#{$custom-prefix}btn-hover-bg);
         border: var(--#{$custom-prefix}btn-hover-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-hover-border-color);
-        animation-name: btn;
-        animation-duration: 2s;
-        transform: translateY(-2px);
-        transition: transform 2s;
+
 
     }
 
     &:focus-visible {
+        --#{$custom-prefix}Y: var(--#{$custom-prefix}btn-focus-move);
+
         padding: var(--#{$custom-prefix}btn-focus-padding);
         color: var(--#{$custom-prefix}btn-focus-color);
         background-color: var(--#{$custom-prefix}btn-hover-bg);
@@ -56,10 +59,42 @@
     }
 
     &:active {
+        --#{$custom-prefix}Y: 1px;
+
         padding: 8px 16px;
         color: var(--#{$custom-prefix}btn-active-color);
         background-color: var(--#{$custom-prefix}btn-active-bg);
         border: 0 solid transparent;
+    }
+}
+
+// Colored variants
+
+@each $color,
+$value in $vm-theme-colors {
+    .btn-#{$color} {
+        --#{$custom-prefix}btn-color: #{$white};
+        --#{$custom-prefix}btn-bg: #{$value};
+        --#{$custom-prefix}btn-border: solid;
+        --#{$custom-prefix}btn-border-width: 0;
+        --#{$custom-prefix}btn-border-color: transparent;
+        --#{$custom-prefix}btn-padding: 8px 16px;
+        --#{$custom-prefix}btn-hover-color: #{$white};
+        --#{$custom-prefix}btn-hover-bg: #{get-color-variant($color, 600)};
+        --#{$custom-prefix}btn-hover-border: solid;
+        --#{$custom-prefix}btn-hover-border-width: 0;
+        --#{$custom-prefix}btn-hover-border-color: transparent;
+        --#{$custom-prefix}btn-hover-padding: 8px 16px;
+        --#{$custom-prefix}btn-focus-color: #{$white};
+        --#{$custom-prefix}btn-focus-bg: #{get-color-variant($color, 600)};
+        --#{$custom-prefix}btn-focus-border: solid;
+        --#{$custom-prefix}btn-focus-border-width: 0;
+        --#{$custom-prefix}btn-focus-border-color: transparent;
+        --#{$custom-prefix}btn-focus-padding: 8px 16px;
+        --#{$custom-prefix}btn-focus-outline: #{get-color-variant($color, 100)};
+        --#{$custom-prefix}btn-active-color: #{$white};
+        --#{$custom-prefix}btn-active-bg: #{get-color-variant($color, 700)};
+
     }
 }
 
@@ -80,7 +115,7 @@ $value in $vm-theme-colors {
         --#{$custom-prefix}btn-hover-border-width: 2px;
         --#{$custom-prefix}btn-hover-border-color: #{$value};
         --#{$custom-prefix}btn-hover-padding: 6px 14px;
-        --#{$custom-prefix}btn-focus-color: #{$value};
+        --#{$custom-prefix}btn-focus-color: #{$white};
         --#{$custom-prefix}btn-focus-bg: #{get-color-variant($color, 100)};
         --#{$custom-prefix}btn-focus-border: solid;
         --#{$custom-prefix}btn-focus-border-width: 2px;
@@ -105,7 +140,7 @@ $value in $vm-theme-colors {
         --#{$custom-prefix}btn-border-color: #{$value};
         --#{$custom-prefix}btn-padding: 7px 15px;
         --#{$custom-prefix}btn-hover-color: #{$value};
-        --#{$custom-prefix}btn-hover-bg: #{get-color-variant($color, 100)};
+        --#{$custom-prefix}btn-hover-bg: #{$white};
         --#{$custom-prefix}btn-hover-border: dashed;
         --#{$custom-prefix}btn-hover-border-width: 2px;
         --#{$custom-prefix}btn-hover-border-color: #{$value};
@@ -118,26 +153,6 @@ $value in $vm-theme-colors {
         --#{$custom-prefix}btn-focus-padding: 6px 14px;
         --#{$custom-prefix}btn-focus-outline: #{get-color-variant($color, 100)};
         --#{$custom-prefix}btn-active-color: #{$white};
-        --#{$custom-prefix}btn-active-bg: #{get-color-variant($color, 100)};
-    }
-}
-
-@keyframes btn {
-    30% {
-        transform: scale(0.7, 0.9);
-        transform: translateY(-1px);
-    }
-
-    60% {
-        transform: scale(1.2, 1);
-    }
-
-    80% {
-        transform: scale(0.9, 1);
-    }
-
-    100% {
-        transform: scale(1, 1);
-        transform: translateY(-2px);
+        --#{$custom-prefix}btn-active-bg: #{$value};
     }
 }
