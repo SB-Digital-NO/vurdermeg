@@ -16,6 +16,7 @@
     --#{$custom-prefix}btn-hover-border-color: transparent;
     --#{$custom-prefix}btn-hover-padding: 8px 16px;
     --#{$custom-prefix}btn-hover-move: -2px;
+    --#{$custom-prefix}btn-hover-box-shadow: #{$vm-shadow-small};
     --#{$custom-prefix}btn-focus-color: #{$white};
     --#{$custom-prefix}btn-focus-bg: #{$btn-focus-color};
     --#{$custom-prefix}btn-focus-border-width: 0;
@@ -23,6 +24,7 @@
     --#{$custom-prefix}btn-focus-outline: #{$btn-focus-outline-color};
     --#{$custom-prefix}btn-focus-padding: 8px 16px;
     --#{$custom-prefix}btn-focus-move: -2px;
+    --#{$custom-prefix}btn-focus-box-shadow: #{$vm-shadow-small};
     --#{$custom-prefix}btn-active-color: #{$white};
     --#{$custom-prefix}btn-active-bg: #{$btn-active-color};
 
@@ -34,7 +36,7 @@
     color: var(--#{$custom-prefix}btn-color);
     border: var(--#{$custom-prefix}btn-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-border-color);
     transform: translateY(var(--#{$custom-prefix}Y));
-    transition: transform 0.2s ease, background-color 0.1s ease, color 0.1s ease, outline 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.1s ease, color 0.1s ease, outline 0.2s ease, box-shadow 0.2s ease;
 
 
     &:hover {
@@ -44,7 +46,7 @@
         color: var(--#{$custom-prefix}btn-hover-color);
         background-color: var(--#{$custom-prefix}btn-hover-bg);
         border: var(--#{$custom-prefix}btn-hover-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-hover-border-color);
-
+        box-shadow: var(--#{$custom-prefix}btn-hover-box-shadow);
 
     }
 
@@ -56,6 +58,7 @@
         background-color: var(--#{$custom-prefix}btn-hover-bg);
         border: var(--#{$custom-prefix}btn-focus-border-width) var(--#{$custom-prefix}btn-border) var(--#{$custom-prefix}btn-focus-border-color);
         outline: 3px solid var(--#{$custom-prefix}btn-focus-outline);
+        box-shadow: var(--#{$custom-prefix}btn-focus-box-shadow);
     }
 
     &:active {
