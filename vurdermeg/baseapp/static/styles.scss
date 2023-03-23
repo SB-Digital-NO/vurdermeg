@@ -34,11 +34,6 @@
     box-sizing: border-box;
 }
 
-$gutters: (
-    0: 0,
-    1: -8px,
-    2: -16px
-);
 
 //
 // 3. Include variables
@@ -47,6 +42,7 @@ $gutters: (
 // Bootstrap
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
+
 
 // Custom
 @import "variables";
@@ -66,8 +62,17 @@ $gutters: (
 //
 // 6. Include optional Bootstrap parts
 //
+
+// Utilities
+@import "bootstrap/scss/utilities";
+// Customise utilities
+
+// Compile with utilities API
+@import "bootstrap/scss/utilities/api";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
 
 //
 // 7. Include Baseline parts
@@ -76,6 +81,8 @@ $gutters: (
 
 @import "baseline/buttons";
 @import 'baseline/cards';
+@import "baseline/sections";
+@import "baseline/deck";
 
 //
 // 8. Inlcude Custom parts

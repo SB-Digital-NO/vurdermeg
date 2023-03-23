@@ -1,0 +1,21 @@
+// deck
+//
+// Container class for decks of sections, adding the ability to 
+// control the z-index of each section with child classes named .first, .second.. .tenth
+
+.deck {
+    display: flex;
+    flex-direction: column;
+}
+
+@each $name,
+$index in $vm-deck-indexes {
+    .deck .#{$name} {
+        z-index: #{$index};
+
+        @if $name !="first" {
+            --#{$custom-prefix}section-margin: -20px;
+            --#{$custom-prefix}section-padding-top: 36px;
+        }
+    }
+}

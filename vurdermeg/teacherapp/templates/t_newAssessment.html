@@ -9,29 +9,36 @@
     </div>
     {% endfor %}
 </div>
-<div class="container">
-    <div class="row gy-2">
-        <div class="col">
-            <h2>Ny vurdering</h2>
+<div class="deck">
+    <div class="first section container-fluid overflow-hidden">
+        <div class="row g-2">
+            <div class="col p-2">
+                <h2>Ny vurdering</h2>
+            </div>
+            <div class="col">
+                <input type="button" value="Tildel" class="btn">
+            </div>
         </div>
-        <div class="col">
-            <input type="button" value="Tildel" class="btn">
+        <div class="row g-2">
+            <div class="col">
+                <button class="btn btn-stroked-attention">Knapp</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-dashed-regard">Knapp</button>
+            </div>
         </div>
     </div>
-    <div class="row gy-2">
-        <div class="col">
-            <button class="btn btn-stroked-attention">Knapp</button>
-        </div>
-        <div class="col">
-            <button class="btn btn-dashed-regard">Knapp</button>
-        </div>
-    </div>
-    <div class="row gy-2">
-        <div class="col">
-            <button class="btn btn-chosen">Knapp</button>
+    <div class="second section section-concentrate container-fluid">
+        <div class="row g-2">
+            <div class="col py-2">
+                <div>
+                    <button class="btn btn-chosen">Knapp</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 <form action="" method="post">
     {% csrf_token %}
