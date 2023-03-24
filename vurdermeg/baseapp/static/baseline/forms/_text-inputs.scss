@@ -1,0 +1,39 @@
+// Text fields and areas
+
+.vm-text-field {
+    --#{$custom-prefix}text-field-border-width: #{$text-field-border-width};
+    --#{$custom-prefix}text-field-border-color: #{$text-field-border-color};
+    --#{$custom-prefix}text-field-border-radius: #{$text-field-border-radius};
+    --#{$custom-prefix}text-field-focus-border-width: #{$text-field-focus-border-width};
+    --#{$custom-prefix}text-field-focus-border-color: #{$text-field-focus-border-color};
+    --#{$custom-prefix}text-field-focus-shadow: #{$text-field-focus-shadow};
+    --#{$custom-prefix}text-field-active-border-width: #{$text-field-active-border-width};
+    --#{$custom-prefix}text-field-active-border-color: #{$text-field-active-border-color};
+    --#{$custom-prefix}text-field-active-shadow: #{$text-field-active-shadow};
+
+    background-color: transparent;
+    border: var(--#{$custom-prefix}text-field-border-width) solid var(--#{$custom-prefix}text-field-border-color);
+    border-radius: var(--#{$custom-prefix}text-field-border-radius);
+    padding: 8px;
+    transition: box-shadow 0.1s ease, border 0.1s ease, padding 0.1s ease;
+
+    &:hover {
+        cursor: text;
+    }
+
+    &:focus {
+        border: var(--#{$custom-prefix}text-field-focus-border-width) solid var(--#{$custom-prefix}text-field-focus-border-color);
+        box-shadow: var(--#{$custom-prefix}text-field-focus-shadow);
+        outline: 0;
+        padding: 7px;
+    }
+
+    &:active {
+        border: var(--#{$custom-prefix}text-field-active-border-width) solid var(--#{$custom-prefix}text-field-active-border-color);
+        box-shadow: var(--#{$custom-prefix}text-field-active-shadow);
+        outline: 0;
+        padding: 7px;
+    }
+}
+
+// text area

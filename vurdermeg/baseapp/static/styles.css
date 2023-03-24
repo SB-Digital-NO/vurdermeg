@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 :root,
@@ -7182,6 +7183,38 @@ Modifiers
   z-index: 110;
   --vm-section-margin: -20px;
   --vm-section-padding-top: 36px;
+}
+
+.vm-text-field {
+  --vm-text-field-border-width: 1px;
+  --vm-text-field-border-color: #333333;
+  --vm-text-field-border-radius: 10px;
+  --vm-text-field-focus-border-width: 2px;
+  --vm-text-field-focus-border-color: #A67B2D;
+  --vm-text-field-focus-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+  --vm-text-field-active-border-width: 2px;
+  --vm-text-field-active-border-color: #A67B2D;
+  --vm-text-field-active-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+  background-color: transparent;
+  border: var(--vm-text-field-border-width) solid var(--vm-text-field-border-color);
+  border-radius: var(--vm-text-field-border-radius);
+  padding: 8px;
+  transition: box-shadow 0.1s ease, border 0.1s ease, padding 0.1s ease;
+}
+.vm-text-field:hover {
+  cursor: text;
+}
+.vm-text-field:focus {
+  border: var(--vm-text-field-focus-border-width) solid var(--vm-text-field-focus-border-color);
+  box-shadow: var(--vm-text-field-focus-shadow);
+  outline: 0;
+  padding: 7px;
+}
+.vm-text-field:active {
+  border: var(--vm-text-field-active-border-width) solid var(--vm-text-field-active-border-color);
+  box-shadow: var(--vm-text-field-active-shadow);
+  outline: 0;
+  padding: 7px;
 }
 
 /*# sourceMappingURL=styles.css.map */
