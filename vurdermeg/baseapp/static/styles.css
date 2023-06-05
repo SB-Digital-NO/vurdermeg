@@ -6946,138 +6946,63 @@
   --vm-btn-active-bg: #BF6E50;
 }
 
-/*
-
--- INDEX --
-
-- Colors
-- Module
-    .card
-- Elements
-    .card__date
-    .card__smalltext
-
-*/
-/*
-Module
-*/
 .card {
-  display: grid;
-  margin: 3%;
-  padding: 1% 2% 1% 2%;
+  --vm-card-border-radius: 20px;
+  --vm-card-bg-color: #FFFFFF;
+  --vm-card-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.16);
+  --vm-card-hover-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+  --vm-card-padding: 8px 16px;
+  --vm-card-margin: 16px 8px;
+  border-radius: var(--vm-card-border-radius);
+  background-color: var(--vm-card-bg-color);
+  box-shadow: var(--vm-card-box-shadow);
+  padding: var(--vm-card-padding);
+  margin: var(--vm-card-margin);
+}
+.card:hover {
+  box-shadow: var(--vm-card-hover-box-shadow);
+}
+.card--no-margin {
+  margin: 0;
+}
+.card--small {
+  --vm-card-border-radius: 10px;
 }
 
-/*
-Elements
-*/
-.card__date {
-  display: grid;
-  grid-template-rows: repeat(3, auto);
-  background-color: #F2F2F2;
-  border-radius: 0.5em;
-  align-content: center;
-  justify-content: center;
-  padding: 0.05em;
-  width: 60px;
-  height: 60px;
+.stamp {
+  --vm-stamp-border-radius: 10px;
+  --vm-stamp-bg-color: #FFFFFF;
+  --vm-stamp-padding: 4px 8px;
+  --vm-stamp-color: #4D4D4D;
+  border-radius: var(--vm-stamp-border-radius);
+  background-color: var(--vm-stamp-bg-color);
+  color: var(--vm-stamp-color);
+  padding: var(--vm-stamp-padding);
 }
-
-.card__smalltext {
-  font-size: 0.5em;
+.stamp--attention {
+  --vm-stamp-bg-color: #ede5d5 ;
 }
-
-.card__boldtext {
-  display: grid;
-  text-decoration: none;
-  font-size: 1.2em;
-  font-weight: bold;
-  align-items: center;
-  justify-items: center;
+.stamp--concentrate {
+  --vm-stamp-bg-color: #ebf2f7 ;
 }
-
-.card__mediumtext {
-  display: grid;
-  font-size: 1em;
-  align-items: center;
-  justify-items: center;
+.stamp--regard {
+  --vm-stamp-bg-color: #e3dad7 ;
 }
-
-.card__container {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  padding-bottom: 9px;
+.stamp--remember {
+  --vm-stamp-bg-color: #dfe5ed ;
 }
-
-.card__info-bar {
-  display: grid;
-  grid-template-columns: 96% auto;
+.stamp--chosen {
+  --vm-stamp-bg-color: #fcf0d9 ;
 }
-
-/*
-Modifiers
-*/
-.card--medium {
-  min-width: 240px;
-  max-width: 300px;
-  min-height: 80px;
+.stamp--recall {
+  --vm-stamp-bg-color: #f2e2dc ;
 }
-
-.card--three-columns {
-  grid-template-columns: repeat(3, auto);
-}
-
-.card--two-rows {
-  grid-template-rows: auto auto;
-}
-
-.card--icon-content-container {
-  grid-template-columns: 20% 80%;
-  justify-items: center;
-  align-items: center;
-}
-
-.card--white {
-  background-color: #FFFFFF;
-}
-
-.card--light-gray {
-  background-color: #F2F2F2;
-}
-
-.card--rounded {
-  border-radius: 0.6em;
-}
-
-.card--drop-shadow {
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.card--dashed-edge {
-  border-style: dashed;
-  border-width: 3px;
-}
-
-.card--themed-edge {
-  border-color: #B98613;
-}
-
-.card--darkgray-edge {
-  border-color: #484848;
-}
-
-.card__date--bold {
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.card__smalltext--right {
-  display: grid;
-  justify-items: right;
-}
-
-.card__smalltext--upper {
-  padding-bottom: 0;
-  margin-bottom: 0;
+.stamp--date {
+  --vm-stamp--date-size: 48px;
+  font-size: 11px;
+  text-align: center;
+  width: var(--vm-stamp--date-size);
+  height: var(--vm-stamp--date-size);
 }
 
 .section {
@@ -7085,9 +7010,10 @@ Modifiers
   --vm-section-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
   --vm-section-padding-top: 16px;
   --vm-section-padding-bottom: 16px;
-  --vm-section-padding-sides: 16px;
+  --vm-section-padding-sides: 8px;
   --vm-section-bg: #FFFFFF;
   --vm-section-margin: 0;
+  --vm-section-font-family: Helvetica Neue;
   border-radius: 0 0 var(--vm-section-border-radius) var(--vm-section-border-radius);
   box-shadow: var(--vm-section-box-shadow);
   padding-top: var(--vm-section-padding-top);
@@ -7096,6 +7022,7 @@ Modifiers
   padding-right: var(--vm-section-padding-sides);
   background-color: var(--vm-section-bg);
   margin-top: var(--vm-section-margin);
+  font-family: var(--vm-section-font-family);
 }
 
 .section-attention {
@@ -7215,6 +7142,11 @@ Modifiers
   box-shadow: var(--vm-text-field-active-shadow);
   outline: 0;
   padding: 7px;
+}
+
+h6 {
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */

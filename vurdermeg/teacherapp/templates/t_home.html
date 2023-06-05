@@ -1,17 +1,54 @@
 {% extends 'base.html' %}
+{% load base_extras %}
 
 {% block head %}
 <title>Teacher home</title>
 {% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<li>User: {{ user.get_username }}</li>
-{% else %}
-Log in to view
-{% endif %}
 
 
+<div class="deck">
+    <div class="first section container">
+        <button class="btn">Ny egenvurdering</button>
+    </div>
+    <div class="second section section-concentrate container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                {% for assessment in assessments %}
+                {% setvar assessment.assignment_week as week %}
+                {{ week }}
+                <div class="card">
+                    <div class="row align-content-center">
+                        <div class="col-auto">
+                            <div class="stamp stamp--concentrate stamp--date col">
+                                <div>
+                                    {{assessment.assignment_day}}
+                                </div>
+                                <div>
+                                    <h6>{{assessment.assignment_date}} </h6>
+                                </div>
+                                <div>
+                                    {{assessment.assignment_month}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            [ / ] 5%
+                        </div>
+                        <div class="col-auto align-self-center">
+                            {{assessment.group}}
+                        </div>
+                        <div class="col-auto align-self-center ms-auto">
+                            <button class="btn d-none d-sm-block">Gå til</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="list-view">

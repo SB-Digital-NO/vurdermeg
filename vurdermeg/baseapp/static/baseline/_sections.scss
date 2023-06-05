@@ -5,9 +5,10 @@
     --#{$custom-prefix}section-box-shadow: #{$vm-shadow-large};
     --#{$custom-prefix}section-padding-top: 16px;
     --#{$custom-prefix}section-padding-bottom: 16px;
-    --#{$custom-prefix}section-padding-sides: 16px;
+    --#{$custom-prefix}section-padding-sides: 8px;
     --#{$custom-prefix}section-bg: #{$white};
     --#{$custom-prefix}section-margin: 0;
+    --#{$custom-prefix}section-font-family: #{$vm-font-family};
 
     border-radius: 0 0 var(--#{$custom-prefix}section-border-radius) var(--#{$custom-prefix}section-border-radius);
     box-shadow: var(--#{$custom-prefix}section-box-shadow);
@@ -17,6 +18,7 @@
     padding-right: var(--#{$custom-prefix}section-padding-sides);
     background-color: var(--#{$custom-prefix}section-bg);
     margin-top: var(--#{$custom-prefix}section-margin);
+    font-family: var(--#{$custom-prefix}section-font-family);
 }
 
 // colored variants

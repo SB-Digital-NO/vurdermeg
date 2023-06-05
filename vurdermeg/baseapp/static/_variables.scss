@@ -180,6 +180,8 @@ $vm-grays: (
 // Fonts
 //
 
+$vm-font-family: "Helvetica Neue";
+
 //
 // Borders
 //
@@ -223,6 +225,12 @@ $btn-focus-outline-color: $attention-100;
 
 
 $custom-prefix: vm-;
+
+//
+// Stamps
+//
+
+$stamp-size-small: 48px;
 
 //
 // Forms

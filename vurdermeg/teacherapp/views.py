@@ -37,7 +37,9 @@ class TeacherHome(ListView):
     def get_queryset(self):
         # modifies the method that retrives the queryset object used to create the SQL-statements.
         self.now = timezone.now()  # <------ For use later when adding date filtering.
-        return Assessment.objects.filter(group__members=self.request.user)
+        return Assessment.objects.filter(group__members=self.request.user).order_by(
+            "-assignment_time"
+        )
 
     def get_context_data(self, **kwargs):
         # Method called to get the context of the html response
@@ -58,6 +60,7 @@ class TeacherHome(ListView):
                 "name": assessment["name"],
                 "group": context["object_list"].get(id=assessment["id"]).group.name,
                 "expiry_time": assessment["expiry_time"],
+                "current_week": self.now.strftime("%W"),
             }
             assessments.append(ass_dict)
         context["assessments"] = assessments  # Use this to access data in template

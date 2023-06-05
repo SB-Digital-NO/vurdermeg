@@ -1,0 +1,30 @@
+// stamps are small ui-elements meant for containing specific data such as dates
+
+.stamp {
+    --#{$custom-prefix}stamp-border-radius: #{$border-radius-secondary};
+    --#{$custom-prefix}stamp-bg-color: #{$white};
+    --#{$custom-prefix}stamp-padding: 4px 8px;
+    --#{$custom-prefix}stamp-color: #{$dark};
+
+    border-radius: var(--#{$custom-prefix}stamp-border-radius);
+    background-color: var(--#{$custom-prefix}stamp-bg-color);
+    color: var(--#{$custom-prefix}stamp-color);
+    padding: var(--#{$custom-prefix}stamp-padding);
+
+    @each $name,
+    $value in $vm-theme-colors {
+        &--#{$name} {
+            --#{$custom-prefix}stamp-bg-color: #{get-color-variant($name, 100)}
+        }
+    }
+
+    &--date {
+        --#{$custom-prefix}stamp--date-size: #{$stamp-size-small};
+
+        font-size: 11px;
+        text-align: center;
+        width: var(--#{$custom-prefix}stamp--date-size);
+        height: var(--#{$custom-prefix}stamp--date-size);
+    }
+
+}
