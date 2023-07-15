@@ -2,13 +2,14 @@
 import os
 from datetime import datetime
 
-from baseapp.models import Assessment, AssessmentGroup, Question
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from django.utils import timezone
 from django.views.generic import ListView
 from django.views.generic.base import View
 from dotenv import load_dotenv
+
+from baseapp.models import Assessment, AssessmentGroup, Question
 
 from .forms import AssessmentForm, AssessmentGroupForm, QuestionFormSet
 
@@ -32,7 +33,7 @@ class LoginAdmin(View):
 class TeacherHome(ListView):
     """View for the home page for teachers."""
 
-    template_name = "t_home.html"
+    template_name = "teacherapp/t_home.html"
 
     def get_queryset(self):
         # modifies the method that retrives the queryset object used to create the SQL-statements.
@@ -71,7 +72,7 @@ class TeacherHome(ListView):
 class TeacherNewAssessment(View):
     """View for creating new assessments and new questions"""
 
-    template_name = "t_newAssessment.html"
+    template_name = "teacherapp/t_newAssessment.html"
     # Content of the page
 
     # Content of the page
@@ -115,7 +116,7 @@ class TeacherNewAssessment(View):
 class AssessmentGroupsView(View):
     """View for viewing and creating assessment groups."""
 
-    template_name = "t_assessmentGroups.html"
+    template_name = "teacherapp/t_assessmentGroups.html"
 
     def get(self, request, *args, **kwargs):
         """Method for GET request"""
@@ -151,7 +152,7 @@ class AssessmentGroupsView(View):
 class AssessmentsView(ListView):
     """View for teachers assessments page."""
 
-    template_name = "t_assessments.html"
+    template_name = "teacherapp/t_assessments.html"
 
     def get_queryset(self):
         return Assessment.objects.filter(group__members=self.request.user)
