@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'baseapp/styles.css' %}" />
     {% block head %} {% endblock %}
 
 </head>
@@ -46,10 +46,10 @@
 
     {% block content %} {% endblock %}
     {% if "teacher" in request.path %}
-    <script src="{% static 'teacher_scripts.js' %}"></script>
+    <script src="{% static 'teacherapp/teacher_scripts.js' %}"></script>
     {% endif %}
-    <script src="{% static 'bootstrap/js/dist/base-component.js' %}"></script>
-    <script src="{% static 'bootstrap/js/dist/collapse.js' %}"></script>
+    <script src="{% static 'baseapp/bootstrap/js/dist/base-component.js' %}"></script>
+    <script src="{% static 'baseapp/bootstrap/js/dist/collapse.js' %}"></script>
 </body>
 
 </html>
