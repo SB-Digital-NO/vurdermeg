@@ -4,6 +4,15 @@
 
 ## Design principals
 
+## Tech-stack overview
+Technologies used in this project:
+- Django
+- PostgreSQL
+- REACT (JS)
+- Bootstrap
+- Fontawesome
+- Opalstack? Heroku?
+
 ## js
 
 ## html
